@@ -1,27 +1,42 @@
-// import {useState} from 'react'
-// import Calendar from 'react-calendar'
-// import 'react-calendar/dist/Calendar.css'
-// import EventList from '../src/EventList'
+
+import './App.css';
+import {useState} from 'react'
+import Calendar from 'react-calendar'
+import 'react-calendar/dist/Calendar.css'
+import {Button, Col, FormGroup} from 'reactstrap'
 
 
-// const initialEvents = [
-//     {date: new Date(), title: ''},
-// ]
 
 
-// const CalendarComponent = () => {
-//     const [selectedDate, setSelectedDate] = useState(new Date(Date.now()))
 
-//     const handleDateChange = (date) => {
-//         setSelectedDate(date)
-//     }
-//     return (
-//         <div>
-//             <h2>Schedule</h2>
-//             <Calendar onChange={handleDateChange} value={selectedDate}/>
-//             <EventList date={selectedDate} events={initialEvents}/>
-//         </div>
-//     )
-// }
 
-// export default CalendarComponent
+const CalendarComponent = () => {
+
+  const [date, setDate] = useState(new Date()) 
+
+
+  return (
+    <div className='app'>
+   
+      <h1> Scheduling </h1>
+      <div className='calendar-container' md='2'>
+        <Calendar onChange={setDate} value={date} />
+      </div>
+      <p className='text-center'>
+        <span className='bold'>Selected Date:</span>{' '}
+        {date.toString()}
+      </p>
+   
+      <FormGroup row>
+            <Col md={{ size: 10, offset: 2 }}>
+            <Button type='submit' color='primary'>
+                Send Feedback
+            </Button>
+        </Col>
+    </FormGroup>
+
+    </div>
+  )
+}
+
+export default CalendarComponent
