@@ -23,9 +23,10 @@ const PatientForm = () => {
             // validate={validateContactForm}
             >
             <Form>
+                <h1>Request Appointment</h1>
                 <FormGroup row>
                     <Label htmlFor='firstName' md='2'>
-                        First Name
+                        Patient's First Name
                     </Label>
                     <Col md='10'>
                         <Field 
@@ -41,7 +42,7 @@ const PatientForm = () => {
 
                 <FormGroup row>
                     <Label htmlFor='lastName' md='2'>
-                        Last Name
+                        Patient's Last Name
                     </Label>
                     <Col md='10'>
                         <Field 
@@ -57,7 +58,7 @@ const PatientForm = () => {
 
                 <FormGroup row>
                     <Label htmlFor='dateOfBirth' md='2'>
-                        DOB
+                        Patient's DOB
                     </Label>
                     <Col md='10'>
                         <Field 
@@ -107,7 +108,7 @@ const PatientForm = () => {
                 <FormGroup row>
                     <Label check md={{size: 4, offset: 2}}>
                         
-                        Preferred contact method
+                        Have you been to therapy before?
                     </Label>
                     <Col md='4'>
                         <Field 
@@ -115,22 +116,59 @@ const PatientForm = () => {
                         name='contactType'
                         as='select'
                         >
-                            <option>By Phone</option>
-                            <option>By Email</option>
+                            <option>Select...</option>
+                            <option>Yes</option>
+                            <option>No</option>
                         </Field>
                     </Col>
                 </FormGroup>
 
                 <FormGroup row>
-                    <Label htmlFor='feedback' md='2'>
-                        What brings you in?
+                    <Label htmlFor='concern' md='4'>
+                        Is there a specific concern you have? If so, please elaborate.
                     </Label>
                     <Col md='10'>
                         <Field 
                         className='form-control' 
-                        name='feedback'
+                        name='concern'
                         as='textarea'
                         rows='12'
+                        />
+                    </Col>
+                </FormGroup>
+
+                <FormGroup row>
+                    <Label htmlFor='length' md='2'>
+                        How long has this been a concern? 
+                    </Label>
+                    <Col md='10'>
+                        <Field 
+                         className='form-control' 
+                         name='contactType'
+                         as='select'
+                         >
+                             <option>Select...</option>
+                             <option>Days</option>
+                             <option>Weeks</option>
+                             <option>Months</option>
+                             <option>Years</option>
+                        </Field>
+                        <ErrorMessage name='length'>
+                            {(msg) => <p className='text-danger'>{msg}</p>}
+                        </ErrorMessage>
+                    </Col>
+                </FormGroup>
+
+                <FormGroup row>
+                    <Label htmlFor='specifics' md='2'>
+                        If you have anything you feel is important for us to know, please add it here.
+                    </Label>
+                    <Col md='10'>
+                        <Field 
+                        className='form-control' 
+                        name='specifics'
+                        as='textarea'
+                        rows='8'
                         />
                     </Col>
                 </FormGroup>

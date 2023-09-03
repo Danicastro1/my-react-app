@@ -8,7 +8,7 @@ import Screenshot from '../img/Screenshot.png'
 const Header = () => {
     // const [menuOpen, setMenuOpen] = useState(false);
 
-    return (<Navbar dark color='info' sticky='top' expand='md'>
+    return (<Navbar sticky='top' expand='md'>
          <NavbarBrand className='ms-5' href='/'>
              <img src={Screenshot} alt='logo' className='float-start'/>
              
