@@ -6,6 +6,7 @@ import Calendar from '../src/Calendar'
 import PatientForm from '../src/components/PatientForm'
 import 'react-calendar/dist/Calendar.css'
 import Footer from './components/Footer';
+import Homepage from './pages/Homepage'
 
 // import {useState} from 'react'
 // import Calendar from 'react-calendar'
@@ -34,7 +35,9 @@ function App() {
     <Router>
  
       <Routes>
-        <Route path="/" element={<AppLayout/>} />
+      <Route path="home" element={<Homepage/>} />
+      <Route path="/" element={<AppLayout/>} />
+        
       </Routes>
       </Router>
     
